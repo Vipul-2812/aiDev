@@ -81,6 +81,7 @@ export const loginUser = async (req, res) => {
     res.status(200).json({
       message: "Successfully logged in",
       token,
+      user:{id: existingUser._id, email: existingUser.email}
     });
   } catch (error) {
     console.error("Error during login:", error);
